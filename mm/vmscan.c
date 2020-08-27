@@ -139,11 +139,7 @@ struct scan_control {
 /*
  * From 0 .. 100.  Higher means more swappy.
  */
-#if CONFIG_MEMCG_HIGHER_SWAPPINESS
-int vm_swappiness = CONFIG_MEMCG_HIGHER_SWAPPINESS;
-#else
-int vm_swappiness = 60;
-#endif
+int vm_swappiness = 100;
 
 /*
  * The total number of pages which are beyond the high watermark within all
