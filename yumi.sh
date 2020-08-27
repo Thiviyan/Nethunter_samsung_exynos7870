@@ -42,14 +42,14 @@ for device in $*; do
   fi
   make O=./Yumi/Out $DVNAME ;
   make O=./Yumi/Out -j$(nproc --all) ;
-  ./Yumi/AIK-Linux/cleanup.sh
-  sudo cp -r ./Yumi/Q/ramdisk ./Yumi/AIK-Linux/ramdisk ;
-  cp -r ./Yumi/Q/split_img ./Yumi/AIK-Linux/split_img ;
-  mv ./Yumi/Out/arch/arm64/boot/Image ./Yumi/AIK-Linux/split_img/boot.img-zImage ;
-  mv ./Yumi/Out/arch/arm64/boot/dtb.img ./Yumi/AIK-Linux/split_img/boot.img-dt ;
-  sudo ./Yumi/AIK-Linux/repackimg.sh ;
+  ./Yumi/AIK/cleanup.sh
+  sudo cp -r ./Yumi/Q/ramdisk ./Yumi/AIK/ramdisk ;
+  cp -r ./Yumi/Q/split_img ./Yumi/AIK/split_img ;
+  mv ./Yumi/Out/arch/arm64/boot/Image ./Yumi/AIK/split_img/boot.img-zImage ;
+  mv ./Yumi/Out/arch/arm64/boot/dtb.img ./Yumi/AIK/split_img/boot.img-dt ;
+  sudo ./Yumi/AIK/repackimg.sh ;
   mkdir ./Yumi/Product
-  mv ./Yumi/AIK-Linux/image-new.img ./Yumi/Product/YumiKernel-V1.0-$device-$(date +'%Y%m%d').img ;
-  ./Yumi/AIK-Linux/cleanup.sh ;
+  mv ./Yumi/AIK/image-new.img ./Yumi/Product/YumiKernel-V1.0-$device-$(date +'%Y%m%d').img ;
+  ./Yumi/AIK/cleanup.sh ;
   echo Kernel build complete for $device
 done
