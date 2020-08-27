@@ -1,8 +1,8 @@
-VERSION = 3
-PATCHLEVEL = 18
-SUBLEVEL = 140
-EXTRAVERSION =
-NAME = Diseased Newt
+VERSION = 5
+PATCHLEVEL = 9
+SUBLEVEL = 0
+EXTRAVERSION = -rc2
+NAME = Yumi Power
 
 # *DOCUMENTATION*
 # To see a list of typical targets execute "make help"
