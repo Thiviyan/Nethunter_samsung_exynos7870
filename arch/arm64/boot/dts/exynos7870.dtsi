@@ -142,28 +142,28 @@
 			compatible = "arm,cortex-a53", "arm,armv8";
 			reg = <0x0 0x100>;
 			enable-method = "psci";
-			cpu-idle-states = <&CPU_SLEEP_NONBOOT>;
+			cpu-idle-states = <&CPU_SLEEP_BOOT>;
 		};
 		cpu5:cpu@101 {
 			device_type = "cpu";
 			compatible = "arm,cortex-a53", "arm,armv8";
 			reg = <0x0 0x101>;
 			enable-method = "psci";
-			cpu-idle-states = <&CPU_SLEEP_NONBOOT>;
+			cpu-idle-states = <&CPU_SLEEP_BOOT>;
 		};
 		cpu6:cpu@102 {
 			device_type = "cpu";
 			compatible = "arm,cortex-a53", "arm,armv8";
 			reg = <0x0 0x102>;
 			enable-method = "psci";
-			cpu-idle-states = <&CPU_SLEEP_NONBOOT>;
+			cpu-idle-states = <&CPU_SLEEP_BOOT>;
 		};
 		cpu7:cpu@103 {
 			device_type = "cpu";
 			compatible = "arm,cortex-a53", "arm,armv8";
 			reg = <0x0 0x103>;
 			enable-method = "psci";
-			cpu-idle-states = <&CPU_SLEEP_NONBOOT>;
+			cpu-idle-states = <&CPU_SLEEP_BOOT>;
 		};
 		idle-states {
 			entry-method = "arm,psci";
@@ -423,20 +423,20 @@
 		/* For CPUFREQ table */
 		/* CL0 */
 		cl0_idx_num = <17>;
-		cl0_max_support_idx = <3>;
+		cl0_max_support_idx = <1>;
 		cl0_min_support_idx = <16>;
-		cl0_boot_max_qos = <1482000>;
-		cl0_boot_min_qos = <1482000>;
+		cl0_boot_max_qos = <1794000>;
+		cl0_boot_min_qos = <1794000>;
 		cl0_boot_lock_time = <40000000>;
 		cl0_en_ema = <1>;
 		cl0_regulator = "BUCK1";
 
 		/* CL1 */
 		cl1_idx_num = <17>;
-		cl1_max_support_idx = <3>;
+		cl1_max_support_idx = <1>;
 		cl1_min_support_idx = <16>;
-		cl1_boot_max_qos = <1482000>;
-		cl1_boot_min_qos = <1482000>;
+		cl1_boot_max_qos = <1794000>;
+		cl1_boot_min_qos = <1794000>;
 		cl1_boot_lock_time = <40000000>;
 		cl1_en_ema = <1>;
 		cl1_regulator = "BUCK1";
@@ -464,7 +464,7 @@
 
 		/* CL1 table ->	 idx  freq    volt   bus_lock */
 		cl1_dvfs_domain_name = "dvfs_cpucl1";
-		cl1_dvfs_table = < 0  2002000  900000   933000
+		cl1_dvfs_table = < 0  2002000  900000  933000
 				   1  1924000  900000	933000
 				   2  1794000  900000	933000
 				   3  1690000  900000	933000
